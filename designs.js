@@ -6,10 +6,17 @@
 $(function(){
 	$('#sizePicker').submit(function makeGrid() {
 		var myTable = $('#pixelCanvas');
-		myTable.children().remove();
+		var tableItems = true;
 		var inputHeight = $('#inputHeight').val();
 		var inputWidth = document.getElementById("inputWeight").value;
 		var markup;
+		
+		while (tableItems){
+			myTable.children().remove();
+			tableItems = false;
+		}
+
+		
 		for (var r = 0; r < inputHeight; r++){
 			markup = "<tr>";
 			for (var c = 0; c < inputWidth; c++){
